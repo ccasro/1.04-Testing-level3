@@ -4,6 +4,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.AssertionsForClassTypes.within;
 
 public class CalculatorTest {
     private Calculator calc;
@@ -26,15 +27,29 @@ public class CalculatorTest {
     }
 
     @Test
+    void sum_with_decimals(){
+        double result = calc.add(2.5,3.2);
+        assertThat(result).isCloseTo(5.7, within(0.0001));
+    }
+
+
+    @Test
     void sub(){
         int result = calc.sub(10,100);
         assertThat(result).isEqualTo(-90);
     }
 
+
     @Test
     void sub_negative_num(){
         int result = calc.sub(-5,-3);
         assertThat(result).isEqualTo(-2);
+    }
+
+    @Test
+    void sub_with_decimals(){
+        double result = calc.sub(2.55,3.25);
+        assertThat(result).isCloseTo(-0.7, within(0.0001));
     }
 
     @Test
@@ -50,6 +65,12 @@ public class CalculatorTest {
     }
 
     @Test
+    void div_with_decimals(){
+        double result = calc.div(3.98,7.12);
+        assertThat(result).isCloseTo(0.55, within(0.01));
+    }
+
+    @Test
     void mul(){
         int result = calc.mul(10,40);
         assertThat(result).isEqualTo(400);
@@ -59,5 +80,11 @@ public class CalculatorTest {
     void mul_negative_num(){
         int result = calc.mul(-10,-30);
         assertThat(result).isEqualTo(300);
+    }
+
+    @Test
+    void mul_with_decimals(){
+        double result = calc.mul(2.55,3.90);
+        assertThat(result).isCloseTo(9.945, within(0.0001));
     }
 }

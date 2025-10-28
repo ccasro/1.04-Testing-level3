@@ -19,4 +19,18 @@ public class Calculator {
     public int mul(int i, int i1) {
         return i * i1;
     }
+
+    public double add(double v, double v1) {
+        return 0;
+    }
+
+
+    public double sub(double v, double v1) {
+        return 0;
+    }
+
+    public double mul(double v, double v1) {
+        return 0;
+    }
+
 }
