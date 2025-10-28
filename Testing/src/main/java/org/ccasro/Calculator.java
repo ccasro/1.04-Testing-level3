@@ -21,16 +21,16 @@ public class Calculator {
     }
 
     public double add(double v, double v1) {
-        return 0;
+        return v + v1;
     }
 
 
     public double sub(double v, double v1) {
-        return 0;
+        return v - v1;
     }
 
     public double mul(double v, double v1) {
-        return 0;
+        return v * v1;
     }
 
 }
