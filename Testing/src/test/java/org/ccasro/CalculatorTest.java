@@ -16,13 +16,13 @@ public class CalculatorTest {
 
     @Test
     void sum(){
-        int result = calc.add(5,10);
+        double result = calc.add(5,10);
         assertThat(result).isEqualTo(15);
     }
 
     @Test
     void sum_negative_num(){
-        int result = calc.add(-5,-3);
+        double result = calc.add(-5,-3);
         assertThat(result).isEqualTo(-8);
     }
 
@@ -35,14 +35,14 @@ public class CalculatorTest {
 
     @Test
     void sub(){
-        int result = calc.sub(10,100);
+        double result = calc.sub(10,100);
         assertThat(result).isEqualTo(-90);
     }
 
 
     @Test
     void sub_negative_num(){
-        int result = calc.sub(-5,-3);
+        double result = calc.sub(-5,-3);
         assertThat(result).isEqualTo(-2);
     }
 
@@ -72,13 +72,13 @@ public class CalculatorTest {
 
     @Test
     void mul(){
-        int result = calc.mul(10,40);
+        double result = calc.mul(10,40);
         assertThat(result).isEqualTo(400);
     }
 
     @Test
     void mul_negative_num(){
-        int result = calc.mul(-10,-30);
+        double result = calc.mul(-10,-30);
         assertThat(result).isEqualTo(300);
     }
 
