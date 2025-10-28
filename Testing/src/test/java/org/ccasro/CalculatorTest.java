@@ -70,6 +70,20 @@ public class CalculatorTest {
         assertThat(result).isCloseTo(0.55, within(0.01));
     }
 
+    @Test
+    void shouldReturnInfinityWhenDividingPositiveByZero(){
+        assertThat(calc.div(10,0)).isEqualTo(Double.POSITIVE_INFINITY);
+    }
+
+    @Test
+    void shouldReturnNegativeInfinityWhenDividingNegativeByZero(){
+        assertThat(calc.div(-10,0)).isEqualTo(Double.NEGATIVE_INFINITY);
+    }
+
+    @Test
+    void shouldReturnNaNWhenDividingZeroByZero() {
+        assertThat(calc.div(0,0)).isNaN();
+    }
 
     @Test
     void shouldReturnCorrectProduct_whenMultiplyingPositiveNumbers(){
